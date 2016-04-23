@@ -1,4 +1,23 @@
 Get the chopper!
-Modify timpo.
-Omanko 
 Daisuki Yoshiokun!
+
+.sshにconfigをつくる
+config中にパス指定みたいなのをつくる
+
+
+vi で編集
+git add 
+git commit 
+git push origin master：originにあるmaster branchに変更を投げる．
+
+git clone github URL ：gitに参加
+git fetch origin：なんだかわからん -> リモートにある変更をoriginに反映させる．（基本：git fetch origin master）
+git marge：調査中
+git rebase master：コミットがきれいになる．
+git checkout -b hogehoge :hogehogeブランチを作成してhogehogeブランチに移動する．
+git branch
+  master
+  develop
+
+git checkout 
+
