@@ -14,6 +14,12 @@ git clone github URL ：gitに参加
 git fetch origin：なんだかわからん -> リモートにある変更をoriginに反映させる．（基本：git fetch origin master）
 git marge：調査中
 git rebase master：コミットがきれいになる．
+git rebase -i HADE~~~~ or GitLogI：複数のcommitを一つにまとめる．まとめる際はpickをsquashに変更して，コメントを修正する．
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　（~の数だけHEADから離れたcommitをまとめることができるよ）
+git push origin "ブランチ名" :リモートに対してpushしたい”ブランチ”を指定してリモート上に投げることができる．
+git push -f origin "ブランチ名" :ふぉーすぷっしゅ　git rebaseをしたらoriginのブランチとローカルブランチの歴史が変わってしまうので（パラドックス）押し通すために使う．
+#pushしたらアサイニーに連絡
+
 git checkout -b hogehoge :hogehogeブランチを作成してhogehogeブランチに移動する．
 git branch
   master
