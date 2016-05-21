@@ -5,21 +5,52 @@ Daisuki Takuchan!
 .sshにconfigをつくる
 config中にパス指定みたいなのをつくる
 
-
 vi で編集
 git add 
-git commit 
+git commit -m "ここにtextを入力します．"
 git push origin master：originにあるmaster branchに変更を投げる．
 
-git clone github URL ：gitに参加
-git fetch origin：なんだかわからん -> リモートにある変更をoriginに反映させる．（基本：git fetch origin master）
-git marge：調査中
-git rebase master：コミットがきれいになる．
-git rebase -i HADE~~~~ or GitLogI：複数のcommitを一つにまとめる．まとめる際はpickをsquashに変更して，コメントを修正する．
+git clone github URL ：g
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+　　git comand 一連の流れ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#origin masterからリモートのmasterへ変更を反映する，
+1 git pull :localのmasterブランチでこれだけ
+
+2 git fetch origin (or origin master)：リモートリポジトリ(origin master)の変更をローカルリポジトリのブランチ(origin/master)に反映させる．
+  git merge origin/master：ローカルリポジトリのmasterブランチ上でローカルリポジトリのブランチ(origin/master)の変更をローカルリポジトリ(master)に反映させる．　
+
+    ==========         ======================= 
+
+          ----------------------------->pull        pullは一気にlacalのmasterへ
+	o		 o		   o
+	o ----->fetch	 o ----->merge	   o　　　　fetchは一旦，謎のorigin/masterへ変更を置いてから merge origin/masterで masterへ引っ張ってくる．
+	o		 o  origin/master  o
+	o		 o		   o
+  origin master    origin/master         master
+
+    ==========         =======================
+      remoto                    local
+
+  　
+#localのmasterブランチからdev, featureブランチへ変更を反映する．
+ rebaseとmerge rebaseは歴史がきれい且つ見やすい　　mergeは歴史が汚くなる，
+1 git rebase master：ローカルのmasterブランチに沿ってコミットがきれいになる．
+  git rebase -i HADE~~~~ or GitLogI：複数のcommitを一つにまとめる．まとめる際はpickをsquashに変更して，コメントを修正する．
 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　（~の数だけHEADから離れたcommitをまとめることができるよ）
-git push origin "ブランチ名" :リモートに対してpushしたい”ブランチ”を指定してリモート上に投げることができる．
-git push -f origin "ブランチ名" :ふぉーすぷっしゅ　git rebaseをしたらoriginのブランチとローカルブランチの歴史が変わってしまうので（パラドックス）押し通すために使う．
-#pushしたらアサイニーに連絡
+2 git merge
+
+
+#変更をリモートに追加する．
+1 git push origin "ブランチ名" :リモートに対してpushしたい”ブランチ”を指定してリモート上に投げることができる．
+  git push -f origin "ブランチ名" :ふぉーすぷっしゅ　git rebaseをしたらoriginのブランチとローカルブランチの歴史が変わってしまうので（パラドックス）押し通すために使う．
+
+#pushしたらアサイニーに連絡 -> LGTMもらう
+#github上でリモートのrigin masterブランチに追加される．
+
+
 
 git checkout -b hogehoge :hogehogeブランチを作成してhogehogeブランチに移動する．
 git branch
