@@ -11,6 +11,13 @@ git commit -m "ここにtextを入力します．"
 git push origin master：originにあるmaster branchに変更を投げる．
 
 git clone github URL ：g
+git pull origin master
+
+
+
+
+
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 　　git comand 一連の流れ
